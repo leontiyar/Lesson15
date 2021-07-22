@@ -8,14 +8,14 @@ namespace Homework3
         {
             Console.WriteLine("Привет! Это калькулятор 2 чисел");
             Console.WriteLine("Введи операцию (+,-,*,/,%)");
-            string oper = Console.ReadLine();
-            switch (oper)
+            string operation = Console.ReadLine();
+            switch (operation)
             {
                 case "+":
                     {
                         Console.WriteLine("Отлично! Сегодня будем суммировать? Теперь введи 1 число");
                         bool smart = double.TryParse(Console.ReadLine(), out double a);
-                        if (!smart)
+                        if (!smart)//Переменная smart отвечает за то, умен ли юзер. Тоесть ввел ли он нормальное 1 число или бурду
                         {
                             Console.WriteLine("А начиналось так красиво...");
                             Console.WriteLine("Я думал ты не дурачок");
@@ -25,7 +25,7 @@ namespace Homework3
                         {
                             Console.WriteLine("Замечательно! Жду 2 число");
                             bool genius = double.TryParse(Console.ReadLine(), out double b);
-                            if (!genius)
+                            if (!genius)//Так же работает и переменная genius, только для 2 числа
                             {
                                 Console.WriteLine("Мужик, ну ты чего?");
                                 Console.WriteLine("Я думал ты не дурачок");
@@ -126,7 +126,7 @@ namespace Homework3
                 case "%":
                     {
                         Console.WriteLine("Отлично! Сегодня будем находить остаток от деления? Теперь введи 1 число");
-                        Console.WriteLine("С этой операцией доступны только натуральные числа!");
+                        Console.WriteLine("С этой операцией доступны только натуральные числа!");//Вряд ли кому то нужны дробные числа при делении на остаток
                         bool smart = int.TryParse(Console.ReadLine(), out int a);
                         if (!smart)
                         {
